@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.4.0-beta.0/css/lightgallery-bundle.min.css">
+
+<title>Text to Speech</title>
+
+<script>
+  var img_src = "{{ url_for('static',filename='files/'+session+'/'+pdf+'_images/page-') }}";
+  var arr = '{{ array }}';
+  var array = arr.split("-x0x-")
+</script>
+{% endblock %}
+
+{% block body %}
+  <div class="collapsible_pdf_section collapse">
+    <iframe src="{{ url_for('static',filename='files/'+session+'/'+pdf+'.pdf') }}" ></iframe>
+    <div id="pdf_collapse_icon"><p>PDF</p></div>
+  </div>
+
+  <div class="collapsible_videos_section collapse">
+    <div class="videos">
+      {% for vid in vids %}
+        <video controls src="{{ url_for('static',filename='files/'+session+'/'+vid) }}" type="video/mp4"></video>
+      {% endfor %}
+    </div>  
+    <div id="videos_collapse_icon"><p>Vids</p></div>
+  </div>
+
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" />
+  </div>
+
+
+  <div class="container">
+    <div class="voices_select">
+      <p>Select Voice</p>
+      <select id="voices"></select>
+    </div>
+    <!-- Range Sliders for Volume, Rate & Pitch -->
+    <div id="sliders">
+      <div id="rate_slider">
+        <p>Rate</p>
+        <input
+          type="range"
+          min="0.1"
+          max="10"
+          value="1"
+          id="rate"
+          step="0.1"
+        />
+        <span id="rate-label" class="col">1</span>
+      </div>
+      <div id="pitch_slider">
+        <p>Pitch</p>
+        <input type="range" min="0" max="2" value="1" step="0.1" id="pitch" />
+        <span id="pitch-label">1</span>
+      </div>
+      <!-- Control Buttons -->
+      <div class="buttons">
+        <button id="start">Start</button>
+        <button id="pause">Pause</button>
+        <button id="resume">Resume</button>
+        <button id="cancel">Cancel</button>
+      </div>
+      <div class="text_sync_buttons">
+        <button id="text_sync_left"> ❮ Left </button>
+        <span>Text Sync</span>
+        <button id="text_sync_right"> Right ❯ </button>
+      </div>
+
+    </div>
+
+    <div class="main">
+      <div id="slides">
+        <img src="{{ url_for('static',filename='files/'+session+'/'+pdf+'_images/page-0.png') }}" alt="" />
+        <span class="arrow arrow-left"> ❮ </span>
+        <span class="arrow arrow-right"> ❯ </span>
+      </div>
+      <div id="text"><p></p></div>
+    </div>
+
+    <!-- Text Area  for the User to Type -->
+    <textarea
+      class="form-control"
+      cols="30"
+      rows="10"
+      placeholder="Type here..."
+    ></textarea>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.4.0-beta.0/lightgallery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+  <script type="module" src="{{ url_for('static',filename='javascript/main.js') }}"></script>
+  <script type="module" src="{{ url_for('static',filename='javascript/mousebinds.js') }}"></script>
+{% endblock %} 
+
+ 
+

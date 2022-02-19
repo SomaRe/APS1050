@@ -1,0 +1,320 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#choose_head {
+  padding: 5px;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.session {
+  padding: 5px;
+}
+
+.ppt {
+  padding: 5px;
+  margin-left: 25px;
+}
+
+*::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+          box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #F5F5F5;
+}
+
+*::-webkit-scrollbar {
+  width: 9px;
+  background-color: #F5F5F5;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+          box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #313131;
+}
+
+.collapsible_pdf_section {
+  z-index: 99;
+  padding: 10px 0 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 95vh;
+  width: 65vw;
+  position: absolute;
+  inset: 0;
+  -webkit-transition: width 0.7s ease-in-out;
+  transition: width 0.7s ease-in-out;
+}
+
+.collapsible_pdf_section iframe {
+  height: 100%;
+  width: 100%;
+}
+
+.collapsible_pdf_section #pdf_collapse_icon p {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-color: gray;
+  padding: 5px;
+  color: white;
+}
+
+.collapsible_videos_section {
+  padding-top: 10px;
+  z-index: 30;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  position: absolute;
+  right: 0;
+  height: 95vh;
+  width: 65vw;
+  -webkit-transition: width 0.7s ease-in-out;
+  transition: width 0.7s ease-in-out;
+}
+
+.collapsible_videos_section .videos {
+  background-color: whitesmoke;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow-y: scroll;
+}
+
+.collapsible_videos_section .videos video {
+  padding: 20px;
+  width: 90%;
+  height: auto;
+}
+
+.collapsible_videos_section #videos_collapse_icon p {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-color: gray;
+  padding: 5px;
+  color: white;
+}
+
+.collapse {
+  width: 0;
+}
+
+.container {
+  height: 100vh;
+  padding: 50px;
+}
+
+.container .voices_select {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container .voices_select p {
+  font-size: 20px;
+}
+
+.container .voices_select select {
+  margin-left: 20px;
+}
+
+.container #sliders {
+  margin: 20px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.container #sliders #rate_slider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container #sliders #rate_slider p,
+.container #sliders #rate_slider input {
+  margin-right: 10px;
+}
+
+.container #sliders #pitch_slider {
+  margin-left: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container #sliders #pitch_slider p,
+.container #sliders #pitch_slider input {
+  margin-right: 10px;
+}
+
+.container #sliders .buttons {
+  margin-left: 20px;
+}
+
+.container #sliders .buttons button {
+  margin-right: 10px;
+}
+
+.container .main {
+  outline: 1px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 70%;
+}
+
+.container .main #slides {
+  padding: 0 15px;
+  height: 100%;
+  width: 70%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .main #slides img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  cursor: -webkit-zoom-in;
+  cursor: zoom-in;
+}
+
+.container .main #slides .arrow {
+  position: absolute;
+  cursor: pointer;
+  top: 42%;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 20px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-color: lightcyan;
+  opacity: 0.5;
+}
+
+.container .main #slides .arrow:hover {
+  opacity: 1;
+}
+
+.container .main #slides .arrow-left {
+  left: 0;
+}
+
+.container .main #slides .arrow-right {
+  right: 0;
+}
+
+.container .main #text {
+  border-left: 1px solid gray;
+  text-align: justify;
+  height: 100%;
+  width: 30%;
+  overflow-y: scroll;
+  padding: 15px;
+}
+
+textarea {
+  display: none;
+}
+
+/* Modal Content */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  padding: 100px;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  width: auto;
+  height: 100%;
+}
+
+.modal-content {
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {
+    -webkit-transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes zoom {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+/*# sourceMappingURL=style.css.map */

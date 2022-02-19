@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <p id="choose_head">Choose the Class session</p>
+        {% for folder in range(folders_names|length) %}
+            <div class = "session">{{ folders_names[folder] }}</div>
+            {% for ppt in range(ppts_path|length) %}
+                <a class="ppt" href="{{ url_for('main', session=folders_names[folder], pdf=ppts_names[folder][ppt]) }}">{{ ppts_names[folder][ppt] }}</a>
+                <br>
+            {% endfor %}
+        {% endfor %}
+{% endblock %}
+
+
+{% block body %}
+
+
+{% endblock %}   
